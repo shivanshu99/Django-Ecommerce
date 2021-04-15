@@ -27,7 +27,7 @@ def index(request):
     if form.is_valid(): 
         form.save() 
         form=EmpF()
-        return HttpResponseRedirect('/blog/home/')
+        return HttpResponseRedirect('/home/')
     return render(request, 'blog/index.html',{'form':form})
 
 

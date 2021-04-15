@@ -21,6 +21,6 @@ from mac import views as mac_views
 from django.conf.urls.static import static
 
 urlpatterns = [
-           path('',mac_views.home,name='index'),
-          path('blog/',mac_views.index,name='index'), 
+        path('',mac_views.home,name='index'),
+        path('blog/',mac_views.index,name='index'), 
 ]

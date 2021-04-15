@@ -25,11 +25,10 @@ from .router import router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/', include('blog.urls')),
-    path('', mac_views.index),
+    path('', include('blog.urls')),
     path('api/',include(router.urls)),
     path('api-token-auth/',views.obtain_auth_token,name='api-tokn-auth'),
     path('login/',user_view.Login,name='login'),
-    path('logout/',auth.LogoutView.as_view(template_name='index.html'),name='logout'),
+    path('logout/',auth.LogoutView.as_view(template_name='user/logout.html'),name='logout'),
     path('register/',user_view.register,name='register'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
